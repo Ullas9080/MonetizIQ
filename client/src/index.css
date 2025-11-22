@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+
+body {
+
+  background: linear-gradient(135deg, #d9d9d9,rgb(247, 241, 185));
+  margin: 0;
+}  

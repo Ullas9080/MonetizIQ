@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="140" viewBox="0 0 480 140" role="img" aria-labelledby="wmTitle wmDesc">
+  <title id="wmTitle">MonetizeIQ Wordmark Logo</title>
+  <desc id="wmDesc">Modern gradient logo with spark icon and bold text</desc>
+
+  <defs>
+    <linearGradient id="textGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/> 
+    </linearGradient>
+
+  </defs>
+
+
+  <text x="80" y="80"
+    font-family="Poppins, Inter, system-ui, sans-serif"
+    font-weight="800"
+    font-size="44"
+    fill="url(#textGradient)"
+    letter-spacing="1">
+    MonetizeIQ
+  </text>
+
+  <rect x="80" y="88" width="280" height="4" rx="2" fill="url(#textGradient)" opacity="0.4"/>
+</svg>
