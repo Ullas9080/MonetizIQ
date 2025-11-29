@@ -8,15 +8,14 @@ export const getNewAccessToken = async (userId) => {
   oauth2Client.setCredentials({ refresh_token: user.refreshToken });
 
 
-  const { token, res } = await oauth2Client.getAccessToken(); 
+  const { credentials } = await oauth2Client.refreshAccessToken();
 
-  if (!token) throw new Error("Failed to refresh access token");
+  if (!credentials.access_token) throw new Error("Failed to refresh access token");
 
-
-  if (res && res.data && res.data.expires_in) {
-    user.expire_date = Date.now() + res.data.expires_in * 1000;
+  if (credentials.expiry_date) {
+    user.expire_date = credentials.expiry_date;
     await user.save();
   }
 
-  return token;
+  return credentials.access_token;
 };

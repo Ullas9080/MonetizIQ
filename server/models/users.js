@@ -5,8 +5,10 @@ const userSchema = new mongoose.Schema({
   name: String,
   title: String,
   logo: String,
+  channelStats: Object,
   refreshToken: String,   
-  expire_date: Number,      
+  expire_date: Number,
+
 });
 
 const USERS = mongoose.model("USERS", userSchema);

@@ -1,12 +1,18 @@
-import { BrowserRouter } from "react-router-dom"
+
+import { useLocation } from "react-router-dom"
+import Header from "./components/Header"
 import Router from "./routes/routes"
 
 const App = () => {
+
+const location=useLocation()
+ const hideHeader = location.pathname === "/"; 
+
   return (
     <div>
-<BrowserRouter>
+{!hideHeader && <Header/>}
 <Router/>
-</BrowserRouter>
+
     </div>
   )
 }

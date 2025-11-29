@@ -2,9 +2,11 @@
 @import "tw-animate-css";
 
 
-
 body {
-
-  background: linear-gradient(135deg, #d9d9d9,rgb(247, 241, 185));
+ background: linear-gradient(135deg, #0d0d0d 0%, #1a0033 30%, #4a148c 50%, #1a0033 70%, #0d0d0d 100%);
+  color: white;
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }  

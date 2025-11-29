@@ -1,51 +1,66 @@
-
-
 import { TypeAnimation } from "react-type-animation";
 
 const Login = () => {
- 
   const handleLogin = () => {
-
-      window.location.href = "http://localhost:3000/oauth2callback/google";
-
+    window.location.href = "http://localhost:3000/oauth2callback/google";
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-yellow-100 via-yellow-50 to-zinc-100 flex items-center justify-center px-6">
-      <div className="w-full max-w-3xl mx-auto text-center">
-        <h1 className="text-6xl font-extrabold text-zinc-900 tracking-tight mb-4">
-          Moneiz<span className="text-yellow-600">IQ</span>
+    <div className="min-h-screen w-full flex items-center justify-center px-6 py-12">
+      <div className="w-full max-w-4xl mx-auto text-center">
+        {/* Main Title */}
+        <h1 className="text-7xl md:text-8xl font-black tracking-tighter mb-6">
+          Monetiz <span className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">IQ</span>
         </h1>
 
-        <p className="text-xl text-zinc-700 max-w-2xl mx-auto leading-relaxed mb-12">
-  <TypeAnimation
-    sequence={[
-      "Understand your YouTube audience like never before.", 2000,
-      "Transform your analytics into powerful insights.", 2000,
-    ]}
-    wrapper="span"
-    speed={50}
-    repeat={Infinity}
-  />
-</p>
+        {/* Animated Tagline */}
+        <p className="text-xl md:text-2xl text-purple-200/90 font-light max-w-3xl mx-auto leading-relaxed mb-16">
+          <TypeAnimation
+            sequence={[
+              "Understand your YouTube audience like never before.",
+              3000,
+              "Turn raw data into real growth strategies.",
+              3000,
+              "Know exactly what your viewers love.",
+              3000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
+        </p>
 
-        <div className="w-full max-w-xl mx-auto p-10 rounded-3xl bg-zinc-50 shadow-2xl border border-zinc-200">
-          <h2 className="text-2xl font-semibold text-zinc-900 mb-6">
-            Sign in to continue
+        {/* Login Card */}
+        <div className="w-full max-w-md mx-auto p-10 rounded-3xl bg-white/10 backdrop-blur-xl border border-purple-500/30 shadow-2xl">
+          <h2 className="text-2xl font-bold text-white mb-8">
+            Sign in to unlock insights
           </h2>
 
           <button
             type="button"
             onClick={handleLogin}
-            className="w-full py-4 rounded-xl bg-yellow-400 text-zinc-900 text-lg font-semibold hover:bg-zinc-400 transition-all shadow-md hover:shadow-xl"
+            className="
+              w-full py-5 rounded-2xl 
+              bg-gradient-to-r from-purple-600 to-pink-600 
+              hover:from-purple-500 hover:to-pink-500
+              text-white text-lg font-bold
+              shadow-lg shadow-purple-600/50
+              transition-all duration-300 
+              flex items-center justify-center gap-3
+              group
+            "
           >
-            🚀 Continue with YouTube
+            <span className="text-2xl group-hover:scale-110 transition-transform">Continue with YouTube</span>
           </button>
 
+          <p className="text-purple-300/70 text-sm mt-8 leading-relaxed">
+            Secure Google OAuth • No passwords • Your channel data stays private
+          </p>
         </div>
 
-        <p className="text-zinc-500 text-sm mt-10">
-          Secure login powered by Google OAuth · Your data stays private
+        {/* Footer */}
+        <p className="text-purple-400/60 text-xs mt-12">
+          Made for creators who want to grow smarter, not harder.
         </p>
       </div>
     </div>
