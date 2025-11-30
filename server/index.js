@@ -18,13 +18,15 @@ app.use(
   })
 );
 
-// Routes
+connectDB();
+
 app.use("/oauth2callback", authRoute);
 app.use("/api/channel", channelRoute);
 app.use("/gemini", geminiRoute);
 
-// Correct Vercel Export
-export default async function handler(req, res) {
-  await connectDB();
-  return app(req, res);
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`Server running locally on port ${PORT}`));
 }
+
+export default app;
