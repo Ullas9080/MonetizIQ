@@ -19,7 +19,9 @@ app.use(
 );
 
 connectDB();
-
+app.get("/", (req, res) => {
+  res.send("Server is alive");
+});
 app.use("/oauth2callback", authRoute);
 app.use("/api/channel", channelRoute);
 app.use("/gemini", geminiRoute);
