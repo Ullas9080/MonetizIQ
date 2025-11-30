@@ -31,4 +31,6 @@ if (process.env.NODE_ENV !== "production") {
   app.listen(PORT, () => console.log(`Server running locally on port ${PORT}`));
 }
 
-export default app;
+export default function handler(req, res) {
+  app(req, res);
+}
