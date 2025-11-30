@@ -9,28 +9,28 @@ import geminiRoute from "../routes/geminiRoute.js";
 dotenv.config();
 
 const app = express();
-let isConnected = false;
-
-async function initDB() {
-  if (!isConnected) {
-    await connectDB();
-    isConnected = true;
-  }
-}
 
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://monetiz-iq.vercel.app", process.env.FRONTEND_URL],
+    origin: process.env.FRONTEND_URL || "https://monetiz-iq.vercel.app/",
     credentials: true,
   })
 );
+
+connectDB();
+
 
 app.use("/oauth2callback", authRoute);
 app.use("/api/channel", channelRoute);
 app.use("/gemini", geminiRoute);
 
-export default async function handler(req, res) {
-  await initDB(); 
-  return app(req, res);
-}
+
+// if (process.env.NODE_ENV !== "production") {
+//   const PORT = process.env.PORT || 5000;
+//   app.listen(PORT, () => {
+//     console.log(`Server running locally on port ${PORT}`);
+//   });
+// }
+
+export default app;
