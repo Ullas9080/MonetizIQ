@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://monetiz-iq-xslp.vercel.app/",
+    baseUrl: "https://monetiz-iq-fh2u.vercel.app/",
     credentials: "include",
   }),
   tagTypes: ["Channel", "Auth", "Video"],

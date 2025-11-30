@@ -8,7 +8,7 @@ import geminiRoute from "./routes/geminiRoute.js"
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT ;
+const PORT ="https://monetiz-iq-fh2u.vercel.app/" ;
 
 app.use(express.json());
 app.use(
