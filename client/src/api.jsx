@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api=axios.create({
-    baseURL:"http://localhost:3000",
+    baseURL:"https://monetiz-iq-xslp.vercel.app/",
     timeout:5000,
     headers:{"Content-Type":"application/json"}
 })
