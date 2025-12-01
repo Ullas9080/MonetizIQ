@@ -56,25 +56,15 @@ export const googleCallback = async (req, res) => {
       await user.save();
     }
 
-    // return res.redirect(
-    //   `${process.env.FRONTEND_URL}/home?userId=${encodeURIComponent(user.userId)}&name=${encodeURIComponent(
-    //     user.name
-    //   )}&title=${encodeURIComponent(user.title)}&logo=${encodeURIComponent(
-    //     user.logo
-    //   )}&picture=${encodeURIComponent(
-    //      profile.picture
-    //   )}`
-    // );
     return res.redirect(
-  `${process.env.FRONTEND_URL}/auth/callback?userId=${encodeURIComponent(user.userId)}&name=${encodeURIComponent(
-    user.name
-  )}&title=${encodeURIComponent(user.title)}&logo=${encodeURIComponent(
-    user.logo
-  )}&picture=${encodeURIComponent(
-    profile.picture
-  )}`
-);
-
+      `${process.env.FRONTEND_URL}/home?userId=${encodeURIComponent(user.userId)}&name=${encodeURIComponent(
+        user.name
+      )}&title=${encodeURIComponent(user.title)}&logo=${encodeURIComponent(
+        user.logo
+      )}&picture=${encodeURIComponent(
+         profile.picture
+      )}`
+    );
   } catch (error) {
     res.redirect(`${process.env.FRONTEND_URL}/`);
   }

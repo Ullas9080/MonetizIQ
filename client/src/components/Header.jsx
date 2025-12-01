@@ -27,7 +27,7 @@ const Header = () => {
     localStorage.clear();
     sessionStorage.clear();
 
- window.location.href = "https://monetiz-iq-fh2u.vercel.app/oauth2callback/logout";
+ window.location.href = "http://localhost:3000/oauth2callback/logout";
   };
 
   return (

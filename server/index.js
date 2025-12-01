@@ -13,22 +13,20 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://monetiz-iq.vercel.app",
+    origin: process.env.FRONTEND_URL || "http://localhost:5173" ,
     credentials: true,
   })
 );
 
 connectDB();
 
-app.get("/ping", (req, res) => {
-  res.send("Server is alive");
-});
 
 app.use("/oauth2callback", authRoute);
 app.use("/api/channel", channelRoute);
 app.use("/gemini", geminiRoute);
 
 
+app.listen(3000,()=>{
+  console.log("Server started")
+})
 
-
-export default app;

@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Login = () => {
   const handleLogin = () => {
-    window.location.href = "https://monetiz-iq-fh2u.vercel.app/oauth2callback/google";
+    window.location.href = `http://localhost:3000/oauth2callback/google`;
   };
 
   return (
