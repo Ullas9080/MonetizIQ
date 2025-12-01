@@ -27,5 +27,8 @@ app.use("/oauth2callback", authRoute);
 app.use("/api/channel", channelRoute);
 app.use("/gemini", geminiRoute);
 
+app.get("/", (req, res) => {
+  res.send("Backend is alive!");
+});
 
 export default app;
