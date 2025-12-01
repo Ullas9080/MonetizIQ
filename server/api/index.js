@@ -1,10 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import connectDB from "./configs/db.js";
-import authRoute from "./routes/authRoute.js";
-import channelRoute from "./routes/channelRoutes.js";
-import geminiRoute from "./routes/geminiRoute.js";
+import connectDB from "../configs/db.js";
+import authRoute from "../routes/authRoute.js";
+import channelRoute from "../routes/channelRoutes.js";
+import geminiRoute from "../routes/geminiRoute.js";
+import serverless from "serverless-http";
+
 
 dotenv.config();
 
@@ -26,7 +28,4 @@ app.use("/api/channel", channelRoute);
 app.use("/gemini", geminiRoute);
 
 
-app.listen(3000,()=>{
-  console.log("Server started")
-})
-
+export const handler = serverless(app);
