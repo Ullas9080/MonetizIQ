@@ -27,7 +27,7 @@ const Header = () => {
     localStorage.clear();
     sessionStorage.clear();
 
- window.location.href = "https://monetiz-iq-odqj.vercel.app/oauth2callback/logout";
+ window.location.href = "https://monetiziq.onrender.com/oauth2callback/logout";
   };
 
   return (

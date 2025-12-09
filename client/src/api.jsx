@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api=axios.create({
-    baseURL:"https://monetiz-iq-odqj.vercel.app/",
+    baseURL:"https://monetiziq.onrender.com/",
     headers:{"Content-Type":"application/json"}
 })
 
